@@ -1,0 +1,333 @@
+world:
+  weather: false
+
+tab:
+  header: "\n&c&lFALLEN KINGDOMS 5&r\n&6Playze &fx &5Neozok\n"
+  footer: "\n&fTwitch Neozok: &d@neozok\n&fTwitch Playze: &d@playze_\n\n&f&lWiki&r: &afk.playze.org/wiki\n"
+
+respawn:
+  auto_respawn: false
+  protection_time: 5
+
+cutclean:
+  animals: true
+  ores: true
+
+loots:
+  "emerald_ore":
+    type: EMERALD_ORE
+    probability: 0.10
+
+    items:
+      "protection_one":
+        probability: 0.18
+        item:
+          ==: org.bukkit.inventory.ItemStack
+          type: ENCHANTED_BOOK
+          meta:
+            ==: ItemMeta
+            meta-type: ENCHANTED
+            stored-enchants:
+              PROTECTION_ENVIRONMENTAL: 1
+      "protection_two":
+        probability: 0.04
+        item:
+          ==: org.bukkit.inventory.ItemStack
+          type: ENCHANTED_BOOK
+          meta:
+            ==: ItemMeta
+            meta-type: ENCHANTED
+            stored-enchants:
+              PROTECTION_ENVIRONMENTAL: 2
+      "protection_three":
+        probability: 0.01
+        item:
+          ==: org.bukkit.inventory.ItemStack
+          type: ENCHANTED_BOOK
+          meta:
+            ==: ItemMeta
+            meta-type: ENCHANTED
+            stored-enchants:
+              PROTECTION_ENVIRONMENTAL: 3
+      "sharpness_one":
+        probability: 0.18
+        item:
+          ==: org.bukkit.inventory.ItemStack
+          type: ENCHANTED_BOOK
+          meta:
+            ==: ItemMeta
+            meta-type: ENCHANTED
+            stored-enchants:
+              DAMAGE_ALL: 1
+      "sharpness_two":
+        probability: 0.04
+        item:
+          ==: org.bukkit.inventory.ItemStack
+          type: ENCHANTED_BOOK
+          meta:
+            ==: ItemMeta
+            meta-type: ENCHANTED
+            stored-enchants:
+              DAMAGE_ALL: 2
+      "sharpness_three":
+        probability: 0.01
+        item:
+          ==: org.bukkit.inventory.ItemStack
+          type: ENCHANTED_BOOK
+          meta:
+            ==: ItemMeta
+            meta-type: ENCHANTED
+            stored-enchants:
+              DAMAGE_ALL: 3
+      "efficiency_one":
+        probability: 0.18
+        item:
+          ==: org.bukkit.inventory.ItemStack
+          type: ENCHANTED_BOOK
+          meta:
+            ==: ItemMeta
+            meta-type: ENCHANTED
+            stored-enchants:
+              DIG_SPEED: 1
+      "efficiency_two":
+        probability: 0.04
+        item:
+          ==: org.bukkit.inventory.ItemStack
+          type: ENCHANTED_BOOK
+          meta:
+            ==: ItemMeta
+            meta-type: ENCHANTED
+            stored-enchants:
+              DIG_SPEED: 2
+      "efficiency_three":
+        probability: 0.01
+        item:
+          ==: org.bukkit.inventory.ItemStack
+          type: ENCHANTED_BOOK
+          meta:
+            ==: ItemMeta
+            meta-type: ENCHANTED
+            stored-enchants:
+              DIG_SPEED: 3
+      "unbreaking_one":
+        probability: 0.23
+        item:
+          ==: org.bukkit.inventory.ItemStack
+          type: ENCHANTED_BOOK
+          meta:
+            ==: ItemMeta
+            meta-type: ENCHANTED
+            stored-enchants:
+              DURABILITY: 1
+      "feather_falling_two":
+        probability: 0.02
+        item:
+          ==: org.bukkit.inventory.ItemStack
+          type: ENCHANTED_BOOK
+          meta:
+            ==: ItemMeta
+            meta-type: ENCHANTED
+            stored-enchants:
+              PROTECTION_FALL: 2
+      "thorns_two":
+        probability: 0.02
+        item:
+          ==: org.bukkit.inventory.ItemStack
+          type: ENCHANTED_BOOK
+          meta:
+            ==: ItemMeta
+            meta-type: ENCHANTED
+            stored-enchants:
+              THORNS: 2
+      "looting_two":
+        probability: 0.02
+        item:
+          ==: org.bukkit.inventory.ItemStack
+          type: ENCHANTED_BOOK
+          meta:
+            ==: ItemMeta
+            meta-type: ENCHANTED
+            stored-enchants:
+              LOOT_BONUS_MOBS: 2
+      "fortune_two":
+        probability: 0.02
+        item:
+          ==: org.bukkit.inventory.ItemStack
+          type: ENCHANTED_BOOK
+          meta:
+            ==: ItemMeta
+            meta-type: ENCHANTED
+            stored-enchants:
+              LOOT_BONUS_BLOCKS: 2
+
+protections:
+  blocks:
+    unbreakable:
+      - MOB_SPAWNER
+      - SEA_LANTERN
+
+    indestructible:
+      - CHEST
+      - TRAPPED_CHEST
+      - ENDER_CHEST
+      - MOB_SPAWNER
+      - SEA_LANTERN
+
+restrictions:
+  enchantments:
+    ## Enchantments Restrictions Properties
+    # 'level_max' is included.
+
+    "fire_aspect":
+      level_max: 0
+    "damage_all":
+      level_max: 3
+
+    "arrow_fire":
+      level_max: 0
+    "arrow_damage":
+      level_max: 3
+
+  items:
+    "trapped_chest":
+      item:
+        ==: org.bukkit.inventory.ItemStack
+        type: TRAPPED_CHEST
+
+    "fishing_rod":
+      item:
+        ==: org.bukkit.inventory.ItemStack
+        type: FISHING_ROD
+
+    "golden_apple":
+      item:
+        ==: org.bukkit.inventory.ItemStack
+        type: GOLDEN_APPLE
+        damage: 1
+
+    "egg":
+      item:
+        ==: org.bukkit.inventory.ItemStack
+        type: EGG
+
+    "snowball":
+      item:
+        ==: org.bukkit.inventory.ItemStack
+        type: SNOW_BALL
+
+    "iron_helmet":
+      item:
+        ==: org.bukkit.inventory.ItemStack
+        type: IRON_HELMET
+
+      enchantments:
+        "protection_environmental":
+          level_max: 4
+
+    "iron_chestplate":
+      item:
+        ==: org.bukkit.inventory.ItemStack
+        type: IRON_CHESTPLATE
+
+      enchantments:
+        "protection_environmental":
+          level_max: 4
+
+    "iron_leggings":
+      item:
+        ==: org.bukkit.inventory.ItemStack
+        type: IRON_LEGGINGS
+
+      enchantments:
+        "protection_environmental":
+          level_max: 4
+
+    "iron_boots":
+      item:
+        ==: org.bukkit.inventory.ItemStack
+        type: IRON_BOOTS
+
+      enchantments:
+        "protection_environmental":
+          level_max: 4
+
+    "diamond_helmet":
+      item:
+        ==: org.bukkit.inventory.ItemStack
+        type: DIAMOND_HELMET
+
+      enchantments:
+        "protection_environmental":
+          level_max: 3
+
+    "diamond_chestplate":
+      item:
+        ==: org.bukkit.inventory.ItemStack
+        type: DIAMOND_CHESTPLATE
+
+      enchantments:
+        "protection_environmental":
+          level_max: 3
+
+    "diamond_leggings":
+      item:
+        ==: org.bukkit.inventory.ItemStack
+        type: DIAMOND_LEGGINGS
+
+      enchantments:
+        "protection_environmental":
+          level_max: 3
+
+    "diamond_boots":
+      item:
+        ==: org.bukkit.inventory.ItemStack
+        type: DIAMOND_BOOTS
+
+      enchantments:
+        "protection_environmental":
+          level_max: 3
+
+spawners:
+  items:
+    "fk_resources":
+      radius: 30
+      interval: 8
+
+      ## Spawner Type
+      # 'all' : drop all items
+      # 'circular' : drop item by item
+      # 'random' : drop random item
+      type: all
+
+      locations:
+        "Orange":
+          location:
+            ==: org.bukkit.Location
+            world: "map_fk-edition-5"
+            x: -214.5
+            y: 68.75
+            z: 336.5
+        "Rose":
+          location:
+            ==: org.bukkit.Location
+            world: "map_fk-edition-5"
+            x: 314.5
+            y: 67.75
+            z: 63.5
+        "Cyan":
+          location:
+            ==: org.bukkit.Location
+            world: "map_fk-edition-5"
+            x: -196.5
+            y: 68.75
+            z: -219.5
+
+      items:
+        "apple":
+          item:
+            ==: org.bukkit.inventory.ItemStack
+            type: APPLE
+        "sugar_cane":
+          item:
+            ==: org.bukkit.inventory.ItemStack
+            type: SUGAR_CANE

@@ -1,0 +1,8 @@
+name: "${project.artifactId}"
+description: "${project.description}"
+version: "${project.version}"
+website: "${project.url}"
+author: Agon KOLGECI
+
+load: POSTWORLD
+main: "com.agonkolgeci.fk_features.FkBootstrap"
