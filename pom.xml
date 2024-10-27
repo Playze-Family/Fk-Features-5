@@ -13,16 +13,6 @@
     <description>Permet l'ajout des fonctionnalités pour l'évènement Fallen Kingdoms 5 de la Playze Family x Neozok.</description>
     <url>https://github.com/Playze-Family/Fk-Features-5</url>
 
-<!--    <modules>-->
-<!--        <module>Fallen Kingdoms API</module>-->
-<!--        <module>Fallen Kingdoms Core</module>-->
-<!--        <module>Fallen Kingdoms CutClean</module>-->
-<!--        <module>Fallen Kingdoms Restrictions</module>-->
-<!--        <module>Fallen Kingdoms Protections</module>-->
-<!--        <module>Fallen Kingdoms Spawners</module>-->
-<!--        <module>Fallen Kingdoms Loots</module>-->
-<!--    </modules>-->
-
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
