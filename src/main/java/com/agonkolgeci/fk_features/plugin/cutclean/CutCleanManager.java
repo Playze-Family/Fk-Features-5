@@ -6,6 +6,7 @@ import com.agonkolgeci.fk_features.api.events.ListenerAdapter;
 import com.agonkolgeci.fk_features.common.PluginManager;
 import com.agonkolgeci.fk_features.common.PluginModule;
 import com.agonkolgeci.fk_features.plugin.cutclean.animals.AnimalsCutCleanManager;
+import com.agonkolgeci.fk_features.plugin.cutclean.blocks.BlocksCutCleanManager;
 import com.agonkolgeci.fk_features.plugin.cutclean.ores.OresCutCleanManager;
 import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
@@ -16,6 +17,7 @@ public class CutCleanManager extends PluginModule implements PluginManager, List
 
     @Getter @NotNull private final AnimalsCutCleanManager animalsCutCleanManager;
     @Getter @NotNull private final OresCutCleanManager oresCutCleanManager;
+    @Getter @NotNull private final BlocksCutCleanManager blocksCutCleanManager;
 
     public CutCleanManager(@NotNull FkPlugin plugin) {
         super(plugin);
@@ -24,18 +26,21 @@ public class CutCleanManager extends PluginModule implements PluginManager, List
 
         this.animalsCutCleanManager = new AnimalsCutCleanManager(this);
         this.oresCutCleanManager = new OresCutCleanManager(this);
+        this.blocksCutCleanManager = new BlocksCutCleanManager(this);
     }
 
     @Override
     public void load() throws Exception {
         animalsCutCleanManager.load();
         oresCutCleanManager.load();
+        blocksCutCleanManager.load();
     }
 
     @Override
     public void unload() throws Exception {
         animalsCutCleanManager.unload();
         oresCutCleanManager.unload();
+        blocksCutCleanManager.unload();
     }
 
 }

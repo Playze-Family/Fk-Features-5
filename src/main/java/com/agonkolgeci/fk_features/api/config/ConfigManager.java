@@ -17,12 +17,12 @@ public class ConfigManager extends PluginModule implements PluginManager {
     public ConfigManager(@NotNull FkPlugin plugin) {
         super(plugin);
 
+        this.instance.saveDefaultConfig();
         this.configuration = instance.getConfig();
     }
 
     @Override
     public void load() throws Exception {
-        instance.saveDefaultConfig();
     }
 
     @Override

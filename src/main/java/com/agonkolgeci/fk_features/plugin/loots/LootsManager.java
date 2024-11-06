@@ -75,9 +75,9 @@ public class LootsManager extends PluginModule implements PluginManager, Listene
                         block.getWorld().dropItemNaturally(block.getLocation().clone().add(.5, .5, .5), lootableItemStack.clone());
 
                         sendInfo(fkPlayer.audience(), Component
-                                .text("Vous avez trouvé")
+                                .text("Vous avez trouvé un nouveau")
                                 .appendSpace()
-                                .append(InventoryUtils.getDisplayName(lootableItemStack, NamedTextColor.YELLOW))
+                                .append(Component.text("trésor", NamedTextColor.YELLOW))
                                 .appendSpace()
                                 .append(Component.text("!"))
                         );

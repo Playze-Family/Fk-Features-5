@@ -12,15 +12,16 @@ respawn:
 cutclean:
   animals: true
   ores: true
+  blocks: true
 
 loots:
   "emerald_ore":
     type: EMERALD_ORE
-    probability: 0.10
+    probability: 0.8
 
     items:
       "protection_one":
-        probability: 0.18
+        probability: 0.25
         item:
           ==: org.bukkit.inventory.ItemStack
           type: ENCHANTED_BOOK
@@ -50,7 +51,7 @@ loots:
             stored-enchants:
               PROTECTION_ENVIRONMENTAL: 3
       "sharpness_one":
-        probability: 0.18
+        probability: 0.25
         item:
           ==: org.bukkit.inventory.ItemStack
           type: ENCHANTED_BOOK
@@ -80,7 +81,7 @@ loots:
             stored-enchants:
               DAMAGE_ALL: 3
       "efficiency_one":
-        probability: 0.18
+        probability: 0.28
         item:
           ==: org.bukkit.inventory.ItemStack
           type: ENCHANTED_BOOK
@@ -109,16 +110,6 @@ loots:
             meta-type: ENCHANTED
             stored-enchants:
               DIG_SPEED: 3
-      "unbreaking_one":
-        probability: 0.23
-        item:
-          ==: org.bukkit.inventory.ItemStack
-          type: ENCHANTED_BOOK
-          meta:
-            ==: ItemMeta
-            meta-type: ENCHANTED
-            stored-enchants:
-              DURABILITY: 1
       "feather_falling_two":
         probability: 0.02
         item:
@@ -149,8 +140,8 @@ loots:
             meta-type: ENCHANTED
             stored-enchants:
               LOOT_BONUS_MOBS: 2
-      "fortune_two":
-        probability: 0.02
+      "fortune_one":
+        probability: 0.01
         item:
           ==: org.bukkit.inventory.ItemStack
           type: ENCHANTED_BOOK
@@ -158,7 +149,7 @@ loots:
             ==: ItemMeta
             meta-type: ENCHANTED
             stored-enchants:
-              LOOT_BONUS_BLOCKS: 2
+              LOOT_BONUS_BLOCKS: 1
 
 protections:
   blocks:
