@@ -302,7 +302,7 @@ spawners:
           location:
             x: 0.5
             y: 96.75
-            z: -394.5
+            z: -393.5
         "Jaune":
           location:
             x: -242.5
