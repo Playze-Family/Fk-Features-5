@@ -8,7 +8,12 @@ import com.agonkolgeci.fk_features.common.PluginManager;
 import com.agonkolgeci.fk_features.common.PluginModule;
 import com.agonkolgeci.fk_features.plugin.players.FkPlayer;
 import com.agonkolgeci.fk_features.utils.minecraft.inventory.InventoryUtils;
+import lombok.Getter;
+import net.kyori.adventure.key.Key;
 import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.event.ClickEvent;
+import net.kyori.adventure.text.event.HoverEvent;
+import net.kyori.adventure.text.event.HoverEventSource;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.GameMode;
 import org.bukkit.Material;
@@ -19,24 +24,30 @@ import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class LootsManager extends PluginModule implements PluginManager, ListenerAdapter, MessagesAdapter {
 
+    @Getter @NotNull private final ConfigEntry configuration;
+
+    @NotNull private final URL wiki;
     @NotNull private final List<LootableBlock> blocks;
 
-    public LootsManager(@NotNull FkPlugin plugin) {
+    public LootsManager(@NotNull FkPlugin plugin) throws MalformedURLException {
         super(plugin);
 
-        @NotNull ConfigEntry configuration = plugin.getConfigManager().of("loots");
+        this.configuration = plugin.getConfigManager().of("loots");
 
+        this.wiki = new URL(configuration.require("wiki"));
         this.blocks = retrieveBlocks(configuration);
     }
 
     @NotNull
     public static List<LootableBlock> retrieveBlocks(@NotNull ConfigEntry configuration) {
-        return configuration.keys(LootableBlock::new);
+        return configuration.of("blocks").keys(LootableBlock::new);
     }
 
     @Override
@@ -91,6 +102,6 @@ public class LootsManager extends PluginModule implements PluginManager, Listene
 
     @Override
     public @NotNull Component getLabel() {
-        return Component.text("Loots", NamedTextColor.GREEN);
+        return Component.text("Loots", NamedTextColor.GREEN).hoverEvent(HOVER_EVENT_ENCOURAGE_CLICK).clickEvent(ClickEvent.clickEvent(ClickEvent.Action.OPEN_URL, wiki.toString()));
     }
 }

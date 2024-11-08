@@ -5,11 +5,14 @@ import net.kyori.adventure.audience.Audience;
 import net.kyori.adventure.key.Key;
 import net.kyori.adventure.sound.Sound;
 import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.event.HoverEvent;
 import net.kyori.adventure.text.format.NamedTextColor;
 import net.kyori.adventure.text.format.TextDecoration;
 import org.jetbrains.annotations.NotNull;
 
 public interface MessagesAdapter {
+
+    @NotNull HoverEvent<Component> HOVER_EVENT_ENCOURAGE_CLICK = HoverEvent.showText(Component.text("Cliquez ici pour obtenir plus d'informations", NamedTextColor.GREEN, TextDecoration.UNDERLINED));
 
     @NotNull Component getLabel();
 

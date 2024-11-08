@@ -15,143 +15,148 @@ cutclean:
   blocks: true
 
 loots:
-  "emerald_ore":
-    type: EMERALD_ORE
-    probability: 0.8
+  wiki: "https://wiki.playze.org/fallen-kingdoms/rules/map/loots"
 
-    items:
-      "protection_one":
-        probability: 0.25
-        item:
-          ==: org.bukkit.inventory.ItemStack
-          type: ENCHANTED_BOOK
-          meta:
-            ==: ItemMeta
-            meta-type: ENCHANTED
-            stored-enchants:
-              PROTECTION_ENVIRONMENTAL: 1
-      "protection_two":
-        probability: 0.04
-        item:
-          ==: org.bukkit.inventory.ItemStack
-          type: ENCHANTED_BOOK
-          meta:
-            ==: ItemMeta
-            meta-type: ENCHANTED
-            stored-enchants:
-              PROTECTION_ENVIRONMENTAL: 2
-      "protection_three":
-        probability: 0.01
-        item:
-          ==: org.bukkit.inventory.ItemStack
-          type: ENCHANTED_BOOK
-          meta:
-            ==: ItemMeta
-            meta-type: ENCHANTED
-            stored-enchants:
-              PROTECTION_ENVIRONMENTAL: 3
-      "sharpness_one":
-        probability: 0.25
-        item:
-          ==: org.bukkit.inventory.ItemStack
-          type: ENCHANTED_BOOK
-          meta:
-            ==: ItemMeta
-            meta-type: ENCHANTED
-            stored-enchants:
-              DAMAGE_ALL: 1
-      "sharpness_two":
-        probability: 0.04
-        item:
-          ==: org.bukkit.inventory.ItemStack
-          type: ENCHANTED_BOOK
-          meta:
-            ==: ItemMeta
-            meta-type: ENCHANTED
-            stored-enchants:
-              DAMAGE_ALL: 2
-      "sharpness_three":
-        probability: 0.01
-        item:
-          ==: org.bukkit.inventory.ItemStack
-          type: ENCHANTED_BOOK
-          meta:
-            ==: ItemMeta
-            meta-type: ENCHANTED
-            stored-enchants:
-              DAMAGE_ALL: 3
-      "efficiency_one":
-        probability: 0.28
-        item:
-          ==: org.bukkit.inventory.ItemStack
-          type: ENCHANTED_BOOK
-          meta:
-            ==: ItemMeta
-            meta-type: ENCHANTED
-            stored-enchants:
-              DIG_SPEED: 1
-      "efficiency_two":
-        probability: 0.04
-        item:
-          ==: org.bukkit.inventory.ItemStack
-          type: ENCHANTED_BOOK
-          meta:
-            ==: ItemMeta
-            meta-type: ENCHANTED
-            stored-enchants:
-              DIG_SPEED: 2
-      "efficiency_three":
-        probability: 0.01
-        item:
-          ==: org.bukkit.inventory.ItemStack
-          type: ENCHANTED_BOOK
-          meta:
-            ==: ItemMeta
-            meta-type: ENCHANTED
-            stored-enchants:
-              DIG_SPEED: 3
-      "feather_falling_two":
-        probability: 0.02
-        item:
-          ==: org.bukkit.inventory.ItemStack
-          type: ENCHANTED_BOOK
-          meta:
-            ==: ItemMeta
-            meta-type: ENCHANTED
-            stored-enchants:
-              PROTECTION_FALL: 2
-      "thorns_two":
-        probability: 0.02
-        item:
-          ==: org.bukkit.inventory.ItemStack
-          type: ENCHANTED_BOOK
-          meta:
-            ==: ItemMeta
-            meta-type: ENCHANTED
-            stored-enchants:
-              THORNS: 2
-      "looting_two":
-        probability: 0.02
-        item:
-          ==: org.bukkit.inventory.ItemStack
-          type: ENCHANTED_BOOK
-          meta:
-            ==: ItemMeta
-            meta-type: ENCHANTED
-            stored-enchants:
-              LOOT_BONUS_MOBS: 2
-      "fortune_one":
-        probability: 0.01
-        item:
-          ==: org.bukkit.inventory.ItemStack
-          type: ENCHANTED_BOOK
-          meta:
-            ==: ItemMeta
-            meta-type: ENCHANTED
-            stored-enchants:
-              LOOT_BONUS_BLOCKS: 1
+  blocks:
+    "emerald_ore":
+      type: EMERALD_ORE
+      probability: 0.8
+
+      items:
+        "protection_one":
+          probability: 0.25
+          item:
+            ==: org.bukkit.inventory.ItemStack
+            type: ENCHANTED_BOOK
+            meta:
+              ==: ItemMeta
+              meta-type: ENCHANTED
+              stored-enchants:
+                PROTECTION_ENVIRONMENTAL: 1
+        "protection_two":
+          probability: 0.04
+          item:
+            ==: org.bukkit.inventory.ItemStack
+            type: ENCHANTED_BOOK
+            meta:
+              ==: ItemMeta
+              meta-type: ENCHANTED
+              stored-enchants:
+                PROTECTION_ENVIRONMENTAL: 2
+        "protection_three":
+          probability: 0.01
+          item:
+            ==: org.bukkit.inventory.ItemStack
+            type: ENCHANTED_BOOK
+            meta:
+              ==: ItemMeta
+              meta-type: ENCHANTED
+              stored-enchants:
+                PROTECTION_ENVIRONMENTAL: 3
+        "sharpness_one":
+          probability: 0.25
+          item:
+            ==: org.bukkit.inventory.ItemStack
+            type: ENCHANTED_BOOK
+            meta:
+              ==: ItemMeta
+              meta-type: ENCHANTED
+              stored-enchants:
+                DAMAGE_ALL: 1
+        "sharpness_two":
+          probability: 0.04
+          item:
+            ==: org.bukkit.inventory.ItemStack
+            type: ENCHANTED_BOOK
+            meta:
+              ==: ItemMeta
+              meta-type: ENCHANTED
+              stored-enchants:
+                DAMAGE_ALL: 2
+        "sharpness_three":
+          probability: 0.01
+          item:
+            ==: org.bukkit.inventory.ItemStack
+            type: ENCHANTED_BOOK
+            meta:
+              ==: ItemMeta
+              meta-type: ENCHANTED
+              stored-enchants:
+                DAMAGE_ALL: 3
+        "efficiency_one":
+          probability: 0.28
+          item:
+            ==: org.bukkit.inventory.ItemStack
+            type: ENCHANTED_BOOK
+            meta:
+              ==: ItemMeta
+              meta-type: ENCHANTED
+              stored-enchants:
+                DIG_SPEED: 1
+        "efficiency_two":
+          probability: 0.04
+          item:
+            ==: org.bukkit.inventory.ItemStack
+            type: ENCHANTED_BOOK
+            meta:
+              ==: ItemMeta
+              meta-type: ENCHANTED
+              stored-enchants:
+                DIG_SPEED: 2
+        "efficiency_three":
+          probability: 0.01
+          item:
+            ==: org.bukkit.inventory.ItemStack
+            type: ENCHANTED_BOOK
+            meta:
+              ==: ItemMeta
+              meta-type: ENCHANTED
+              stored-enchants:
+                DIG_SPEED: 3
+        "feather_falling_two":
+          probability: 0.02
+          item:
+            ==: org.bukkit.inventory.ItemStack
+            type: ENCHANTED_BOOK
+            meta:
+              ==: ItemMeta
+              meta-type: ENCHANTED
+              stored-enchants:
+                PROTECTION_FALL: 2
+        "thorns_two":
+          probability: 0.02
+          item:
+            ==: org.bukkit.inventory.ItemStack
+            type: ENCHANTED_BOOK
+            meta:
+              ==: ItemMeta
+              meta-type: ENCHANTED
+              stored-enchants:
+                THORNS: 2
+        "looting_two":
+          probability: 0.02
+          item:
+            ==: org.bukkit.inventory.ItemStack
+            type: ENCHANTED_BOOK
+            meta:
+              ==: ItemMeta
+              meta-type: ENCHANTED
+              stored-enchants:
+                LOOT_BONUS_MOBS: 2
+        "fortune_one":
+          probability: 0.01
+          item:
+            ==: org.bukkit.inventory.ItemStack
+            type: ENCHANTED_BOOK
+            meta:
+              ==: ItemMeta
+              meta-type: ENCHANTED
+              stored-enchants:
+                LOOT_BONUS_BLOCKS: 1
 
 protections:
+  wiki: "https://wiki.playze.org/fallen-kingdoms/rules/map/exceptions"
+  
   blocks:
     unbreakable:
       - MOB_SPAWNER
@@ -165,6 +170,8 @@ protections:
       - SEA_LANTERN
 
 restrictions:
+  wiki: "https://wiki.playze.org/fallen-kingdoms/rules/fights/"
+
   enchantments:
     ## Enchantments Restrictions Properties
     # 'level_max' is included.
@@ -291,27 +298,21 @@ spawners:
       type: all
 
       locations:
-        "Orange":
+        "Rouge":
           location:
-            ==: org.bukkit.Location
-            world: "map_fk-edition-5"
-            x: -214.5
-            y: 68.75
-            z: 336.5
-        "Rose":
+            x: 0.5
+            y: 96.75
+            z: -394.5
+        "Jaune":
           location:
-            ==: org.bukkit.Location
-            world: "map_fk-edition-5"
-            x: 314.5
-            y: 67.75
-            z: 63.5
-        "Cyan":
+            x: -242.5
+            y: 96.75
+            z: 296.5
+        "Vert":
           location:
-            ==: org.bukkit.Location
-            world: "map_fk-edition-5"
-            x: -196.5
-            y: 68.75
-            z: -219.5
+            x: 243.5
+            y: 97.75
+            z: 296.5
 
       items:
         "apple":

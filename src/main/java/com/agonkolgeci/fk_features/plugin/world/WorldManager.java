@@ -7,17 +7,20 @@ import com.agonkolgeci.fk_features.common.PluginManager;
 import com.agonkolgeci.fk_features.common.PluginModule;
 import lombok.Getter;
 import lombok.Setter;
-import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.event.EventHandler;
-import org.bukkit.event.weather.LightningStrikeEvent;
-import org.bukkit.event.weather.ThunderChangeEvent;
 import org.bukkit.event.weather.WeatherChangeEvent;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class WorldManager extends PluginModule implements PluginManager, ListenerAdapter {
 
     @Getter @NotNull private final ConfigEntry configuration;
+
+    @Getter @NotNull private final World world;
+    @Getter @Nullable private final World nether;
+    @Getter @Nullable private final World end;
 
     @Getter @Setter private boolean weather;
 
@@ -25,6 +28,10 @@ public class WorldManager extends PluginModule implements PluginManager, Listene
         super(plugin);
 
         this.configuration = plugin.getConfigManager().of("world");
+
+        this.world = server.getWorlds().stream().findFirst().orElseThrow(() -> new IllegalStateException("Cannot find the primary World !"));
+        this.nether = server.getWorlds().size() > 1 ? server.getWorlds().get(1) : null;
+        this.end = server.getWorlds().size() > 2 ? server.getWorlds().get(2) : null;
 
         this.weather = configuration.require("weather");
     }

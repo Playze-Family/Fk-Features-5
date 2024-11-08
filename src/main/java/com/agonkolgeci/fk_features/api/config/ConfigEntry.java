@@ -6,11 +6,14 @@ import com.agonkolgeci.fk_features.api.config.callback.type.ConfigurationTypeObj
 import com.agonkolgeci.fk_features.common.PluginAddon;
 import com.agonkolgeci.fk_features.utils.objects.ObjectUtils;
 import lombok.Getter;
+import org.bukkit.Location;
+import org.bukkit.World;
 import org.bukkit.configuration.ConfigurationSection;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
+import java.util.function.Consumer;
 import java.util.function.Supplier;
 
 @Getter
@@ -122,6 +125,13 @@ public class ConfigEntry extends PluginAddon<ConfigManager> {
     @NotNull
     public <T> T require(@NotNull String key, @NotNull String message) {
         return Objects.requireNonNull(get(key), String.format("Cannot retrieve '%s' key associated with the '%s' parent in the configuration: '%s'", key, configuration.getParent(), message));
+    }
+
+    @NotNull
+    public Location location(@NotNull World world, @NotNull String key) {
+        @NotNull final ConfigEntry locationEntry = of(key);
+
+        return new Location(world, locationEntry.require("x"), locationEntry.require("y"), locationEntry.require("z"), locationEntry.get("yaw", 0F), locationEntry.get("pitch", 0F));
     }
 
 }

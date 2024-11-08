@@ -7,6 +7,7 @@ import com.agonkolgeci.fk_features.api.messages.MessagesAdapter;
 import com.agonkolgeci.fk_features.common.PluginManager;
 import com.agonkolgeci.fk_features.plugin.cutclean.CutCleanManager;
 import com.agonkolgeci.fk_features.plugin.loots.LootsManager;
+import com.agonkolgeci.fk_features.plugin.mobs.MobsManager;
 import com.agonkolgeci.fk_features.plugin.players.PlayersManager;
 import com.agonkolgeci.fk_features.plugin.protections.ProtectionsManager;
 import com.agonkolgeci.fk_features.plugin.respawn.RespawnManager;
@@ -32,6 +33,7 @@ public class FkPlugin implements PluginManager, MessagesAdapter {
 
     @Getter @NotNull private final PlayersManager playersManager;
     @Getter @NotNull private final WorldManager worldManager;
+
     @Getter @NotNull private final TabManager tabManager;
     @Getter @NotNull private final RespawnManager respawnManager;
     @Getter @NotNull private final CutCleanManager cutCleanManager;
@@ -39,8 +41,9 @@ public class FkPlugin implements PluginManager, MessagesAdapter {
     @Getter @NotNull private final ProtectionsManager protectionsManager;
     @Getter @NotNull private final RestrictionsManager restrictionsManager;
     @Getter @NotNull private final SpawnersManager spawnersManager;
+    @Getter @NotNull private final MobsManager mobsManager;
 
-    public FkPlugin(@NotNull FkBootstrap instance) {
+    public FkPlugin(@NotNull FkBootstrap instance) throws Exception {
         this.instance = instance;
 
         this.adventureManager = BukkitAudiences.create(instance);
@@ -49,8 +52,10 @@ public class FkPlugin implements PluginManager, MessagesAdapter {
         this.eventsController = new EventsManager(this);
         this.configManager = new ConfigManager(this);
 
+        // Necessary managers
         this.playersManager = new PlayersManager(this);
         this.worldManager = new WorldManager(this);
+
         this.tabManager = new TabManager(this);
         this.respawnManager = new RespawnManager(this);
         this.cutCleanManager = new CutCleanManager(this);
@@ -58,6 +63,7 @@ public class FkPlugin implements PluginManager, MessagesAdapter {
         this.protectionsManager = new ProtectionsManager(this);
         this.restrictionsManager = new RestrictionsManager(this);
         this.spawnersManager = new SpawnersManager(this);
+        this.mobsManager = new MobsManager(this);
     }
 
     @Override
@@ -68,6 +74,7 @@ public class FkPlugin implements PluginManager, MessagesAdapter {
 
         playersManager.load();
         worldManager.load();
+
         tabManager.load();
         respawnManager.load();
         cutCleanManager.load();
@@ -75,6 +82,7 @@ public class FkPlugin implements PluginManager, MessagesAdapter {
         protectionsManager.load();
         restrictionsManager.load();
         spawnersManager.load();
+        mobsManager.load();
     }
 
     @Override
@@ -85,6 +93,7 @@ public class FkPlugin implements PluginManager, MessagesAdapter {
 
         playersManager.unload();
         worldManager.unload();
+
         tabManager.unload();
         respawnManager.unload();
         cutCleanManager.unload();
@@ -92,6 +101,7 @@ public class FkPlugin implements PluginManager, MessagesAdapter {
         protectionsManager.unload();
         restrictionsManager.unload();
         spawnersManager.unload();
+        mobsManager.unload();
     }
 
     @Override

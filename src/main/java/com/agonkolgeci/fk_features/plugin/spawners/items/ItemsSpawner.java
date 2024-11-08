@@ -1,6 +1,7 @@
 package com.agonkolgeci.fk_features.plugin.spawners.items;
 
 import com.agonkolgeci.fk_features.api.config.ConfigEntry;
+import com.agonkolgeci.fk_features.common.PluginAddon;
 import com.agonkolgeci.fk_features.plugin.spawners.SpawnersManager;
 import com.agonkolgeci.fk_features.utils.minecraft.entities.EntityUtils;
 import com.agonkolgeci.fk_features.utils.objects.ObjectUtils;
@@ -20,7 +21,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Getter
-public class ItemsSpawner {
+public class ItemsSpawner extends PluginAddon<SpawnersManager> {
 
     @NotNull private final List<Location> locations;
     @NotNull private final CircularQueue<ItemStack> items;
@@ -32,8 +33,10 @@ public class ItemsSpawner {
 
     @Nullable private BukkitTask spawnerTask;
 
-    public ItemsSpawner(@NotNull ConfigEntry configuration) {
-        this.locations = configuration.of("locations").keys(c -> c.require("location", "Incorrect Location"));
+    public ItemsSpawner(@NotNull SpawnersManager spawnersManager, @NotNull ConfigEntry configuration) {
+        super(spawnersManager);
+
+        this.locations = configuration.of("locations").keys(c -> c.location(spawnersManager.getPlugin().getWorldManager().getWorld(), "location"));
         this.items = new CircularQueue<>(configuration.of("items").keys(c -> c.require("item", "Incorrect Item")));
 
         this.type = ObjectUtils.fetchObject(Type.class, configuration.get("type"), "Unknown Items Spawner Type: '%s'");

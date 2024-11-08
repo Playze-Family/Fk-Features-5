@@ -25,8 +25,8 @@ public class ItemsSpawnersManager extends PluginAddon<SpawnersManager> implement
     }
 
     @NotNull
-    public static List<ItemsSpawner> retrieveSpawners(@NotNull ConfigEntry configuration) {
-        return configuration.keys(ItemsSpawner::new);
+    public List<ItemsSpawner> retrieveSpawners(@NotNull ConfigEntry configuration) {
+        return configuration.keys(entry -> new ItemsSpawner(module, entry));
     }
 
     @Override
